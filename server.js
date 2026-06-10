@@ -17,7 +17,7 @@ const dur = new client.Histogram({
 async function init() {
     await pool.query('CREATE TABLE IF NOT EXISTS orders (id SERIAL PRIMARY KEY, item TEXT, qty INT)');
 }
-app.get('/healthz', (req,res) => res.send('ok'));
+app.get('/healthz', (req,res) => res.send('ok v2'));
 app.get('/metrics', async (req,res) => {
     res.set('Content-Type', client.register.contentType);
     res.end(await client.register.metrics());
